@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block body %}
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          
+          {% if profile.image %}
+              <img src="{{profile.image.url}}" class="img-fluid" alt="">
+        {% else %}
+             <img src="{% static 'site_static/img/user-default.png' %}" class="img-fluid" alt="">
+        {% endif %}
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <p class="lead font-weight-bold">{{profile}}</p>
+            <p class="lead">
+                  <p>{{profile.user.email}}</p>
+                  <p>{{profile.country}} - {{profile.address}}</p>
+            </p>
+
+              <!-- Default input -->
+              <a class="btn btn-primary btn-md my-0 p" type="submit">Edit My Profile
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-md-6 text-center">
+    
+              <h4 class="my-4 h4">My Orders</h4>
+              <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <!--Grid column-->
+    
+          </div>
+          <!--Grid row-->
+    </div>
+  </main>
+  <!--Main layout-->
+  {% endblock body %}
+  

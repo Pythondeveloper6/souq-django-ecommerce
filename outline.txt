@@ -1,0 +1,12 @@
+Product : 
+	name
+	category
+	desc
+	img
+	price
+	cost
+	created
+
+
+
+##github 
